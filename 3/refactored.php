@@ -8,38 +8,31 @@ class Consumer
     private string $city;
     private string $zip;
     private string $amountInWallet;
-    private string $age;
+    private int $age;
 
     public function deposit(float $value)
     {
         return $this->amountInWallet += $value;
     }
 
-    public function withdraw(float $value)
+    public function isAmountInWalletGreaterThan10000()
     {
-        return $this->amountInWallet -= $value;
-    }
-
-    public function setAge(int $age)
-    {
-        $this->age = $age;
-    }
-
-    public function isLegalAge()
-    {
-        if ($this->age > 16) {
+        if ($this->amountInWallet > 10000) {
             return true;
         }
 
         return false;
-
     }
 
+    public function withdraw(float $value)
+    {
+        return $this->amountInWallet -= $value;
+    }
 }
 
 $consumer = new Consumer();
-if (!$consumer->isLegalAge()) {
-    throw new Exception("Usuario menor de 16 anos", 400);
+if ($consumer->isAmountInWalletGreaterThan10000()) {
+    throw new Exception("Saldo excede R$10.000, termine a validação da sua conta", 400);
 } 
 
 return 'OK';

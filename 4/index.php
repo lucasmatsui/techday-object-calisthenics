@@ -45,16 +45,6 @@ class Consumer
     {
         $this->age = $age;
     }
-
-    public function isLegalAge()
-    {
-        if ($this->age > 16) {
-            return true;
-        }
-
-        return false;
-
-    }
 }
 
 $consumer = new Consumer(

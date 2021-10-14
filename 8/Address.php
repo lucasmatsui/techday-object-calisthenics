@@ -13,7 +13,7 @@ class Address
         string $number,
         string $street,
         string $city,
-        string $country,
+        string $country
     ){
     
         $this->state = $state;

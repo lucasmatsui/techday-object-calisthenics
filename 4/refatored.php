@@ -30,19 +30,10 @@ class Consumer
         $this->age = $age;
     }
 
-    public function isLegalAge()
-    {
-        if ($this->age > 16) {
-            return true;
-        }
-
-        return false;
-
-    }
 }
 
 $consumer = new Consumer(
-    'Lucas',
-    'lucas-matsui@hotmail.com',
-    20
+    new Name('Lucas'),
+    new Email('lucas-matsui@hotmail.com'),
+    new Age(20)
 );

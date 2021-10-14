@@ -1,6 +1,6 @@
 <?php 
 
-class A 
+class Restriction 
 {
     public function getRestriction($restriction)
     {
@@ -14,6 +14,7 @@ class A
 
         if (!$this->hasRestrictionHeritage($restriction)) {
             Log::write("{$restriction} não aplica heranca.");
+            return [];
         }
 
         return $restriction;

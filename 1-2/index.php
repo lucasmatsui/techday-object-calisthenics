@@ -1,6 +1,6 @@
 <?php 
 
-class A 
+class Restriction 
 {
     public function getRestriction($restriction)
     {
